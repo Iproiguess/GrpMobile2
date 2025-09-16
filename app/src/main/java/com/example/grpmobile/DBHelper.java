@@ -102,9 +102,6 @@ public class DBHelper extends SQLiteOpenHelper {
         } catch (Exception e) {
             Log.e("DBHelper", "Error adding user: " + username, e);
         } finally {
-            // It's often better to manage db opening/closing at a higher level
-            // or ensure it's closed if the instance is short-lived.
-            // For now, let's assume it's managed by the system or higher-level components.
         }
         return result != -1;
     }

@@ -34,10 +34,10 @@ public class MainActivity extends AppCompatActivity {
         edtName = findViewById(R.id.edtName);
         edtPassword = findViewById(R.id.edtPassword);
         edtConfirmPassword = findViewById(R.id.edtConfirmPassword);
-        edtEmail = findViewById(R.id.edtEmail); // Initialize edtEmail
+        edtEmail = findViewById(R.id.edtEmail);
         radioGroup = findViewById(R.id.radioGroup);
-        btnLoginOrSignup = findViewById(R.id.btnLogin); // ID from XML is btnLogin
-        tvToggleMode = findViewById(R.id.tvGoToSignup); // ID from XML is tvGoToSignup
+        btnLoginOrSignup = findViewById(R.id.btnLogin);
+        tvToggleMode = findViewById(R.id.tvGoToSignup);
 
         dbHelper = new DBHelper(this);
 
@@ -74,8 +74,8 @@ public class MainActivity extends AppCompatActivity {
         edtEmail.setText(""); // Clear email field
         radioGroup.setVisibility(View.GONE);
         edtConfirmPassword.setVisibility(View.GONE);
-        edtEmail.setVisibility(View.GONE); // Hide email field
-        edtName.setError(null); // Clear any previous errors
+        edtEmail.setVisibility(View.GONE);
+        edtName.setError(null);
         edtPassword.setError(null);
         edtName.requestFocus();
     }
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         edtName.setText("");
         edtPassword.setText("");
         edtConfirmPassword.setText("");
-        edtEmail.setText(""); // Clear email field
+        edtEmail.setText("");
         radioGroup.setVisibility(View.VISIBLE);
         edtConfirmPassword.setVisibility(View.VISIBLE);
         edtEmail.setVisibility(View.VISIBLE);
@@ -139,10 +139,10 @@ public class MainActivity extends AppCompatActivity {
             }
             intent.putExtra("USERNAME", name); // Pass username to the next activity
             startActivity(intent);
-            finish(); // Finish MainActivity so user can't go back to it without logging out
+            finish();
         } else {
             Toast.makeText(MainActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
-            edtPassword.setText(""); // Clear password on failed login
+            edtPassword.setText("");
             edtPassword.requestFocus();
         }
     }

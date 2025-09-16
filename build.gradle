@@ -1,4 +1,16 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+
 plugins {
-alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.kotlin.android) apply false
+    // alias(libs.plugins.android.library) apply false // If you have library modules
+    // alias(libs.plugins.kotlin.android) apply false // If using Kotlin
 }
+
+// NO 'buildscript' or 'allprojects' repository blocks should be here
+// when settings.gradle handles repositories with FAIL_ON_PROJECT_REPOS.
+
+// Optional: Clean task (often included by default or in templates)
+// task clean(type: Delete) {
+//     delete rootProject.buildDir
+// }
